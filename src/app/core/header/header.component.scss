@@ -1,0 +1,20 @@
+mat-toolbar {
+    background-color: #1B5299;
+    color: #2C2C34;
+}
+.spacer {
+    flex: 1 1 auto;
+}
+.login-button {
+    width: 3%;
+    height: 50%;
+}
+.left{
+    margin-left: 10px;
+    display: flex;
+    gap: 10px;
+}
+.sections {
+    font-weight: 500;
+    color: white
+}

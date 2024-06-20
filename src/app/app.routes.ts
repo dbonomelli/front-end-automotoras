@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddAutoComponent } from './pages/autos/add-auto/add-auto.component';
+import { LoginComponent } from './core/login/login.component';
 
 export const routes: Routes = [
     {path: 'autos', component: DashboardComponent},
-    {path: 'autos/create', component: AddAutoComponent}
+    {path: 'autos/create', component: AddAutoComponent},
+    {path: 'login', component: LoginComponent}
 ];

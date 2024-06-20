@@ -1,0 +1,66 @@
+<div style="padding: 1rem;">
+    <button mat-raised-button (click)="back()"> Volver </button>
+</div>
+@if(isAdd){
+    <div style="display: flex; flex-direction: column; gap: 7px; border: 1px solid; padding: 0.5rem">
+        <span>Agregar un nuevo vehículo</span>
+        <mat-form-field>
+        <mat-label>Id</mat-label>
+            <input matInput [(ngModel)]="id">
+        </mat-form-field>
+        <mat-form-field>
+        <mat-label>Modelo</mat-label>
+            <input matInput [(ngModel)]="modelo" >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Marca</mat-label>
+            <input matInput [(ngModel)]="marca" >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Año</mat-label>
+            <input type="number" matInput [(ngModel)]="anno" >
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Color</mat-label>
+            <input matInput [(ngModel)]="color">
+        </mat-form-field>
+        <section>
+            <input type="checkbox" [(ngModel)]="centralizado">Cierre centralizado
+            <input type="checkbox" [(ngModel)]="ac">Aire acondicionado
+        </section>
+        <div style="text-align: right;">
+            <button mat-button (click)="save()"> Agregar vehículo</button>
+        </div>
+    </div>
+}
+@else{
+    <div>
+        <form action="">
+            <mat-form-field>
+                <mat-label>Id</mat-label>
+                <input matInput value="3" disabled>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Modelo</mat-label>
+                <input matInput value="3" >
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Marca</mat-label>
+                <input matInput value="3" >
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Año</mat-label>
+                <input matInput value="3" >
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Color</mat-label>
+                <input matInput>
+              </mat-form-field>
+              <section class="example-section">
+                <mat-checkbox (ngModel)="centralizado">Cierre centralizado</mat-checkbox>
+                <mat-checkbox (ngModel)="ac">Aire acondicionado</mat-checkbox>
+              </section>
+        </form>
+    </div>
+}
+

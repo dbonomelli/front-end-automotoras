@@ -32,7 +32,7 @@ export class InputsComponent {
 
   save(){
     this.auto = {
-      id: this.id,
+      id: this.generadorID(8),
       modelo: this.modelo,
       marca: this.marca,
       anno: this.anno,
@@ -42,11 +42,20 @@ export class InputsComponent {
     }
 
     this.autoService.save(this.auto);
-
+    this.back();
   }
 
   back(){
     this.router.navigate(['autos']);
   }
+
+  generadorID(length: number) {
+    let alfab = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += alfab.charAt(Math.floor(Math.random() * alfab.length));
+    }
+    return result;
+}
 
 }

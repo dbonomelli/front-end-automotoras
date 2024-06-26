@@ -25,6 +25,7 @@ export class InputsComponent {
   marca:string = '';
   anno:number = 0;
   color:string = '';
+  valor:number = 0;
   centralizado:boolean = true;
   ac:boolean = true;
 
@@ -37,6 +38,7 @@ export class InputsComponent {
       marca: this.marca,
       anno: this.anno,
       color: this.color,
+      valor: this.valor,
       centralizado: this.centralizado,
       ac: this.ac
     }

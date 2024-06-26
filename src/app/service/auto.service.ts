@@ -15,6 +15,7 @@ export class AutoService {
       marca: "Mazda",
       anno: 2004,
       color: "Azul",
+      valor: 10000000,
       centralizado: true,
       ac: true
     },
@@ -24,6 +25,7 @@ export class AutoService {
       marca: "Chevrolet",
       anno: 2018,
       color: "Rojo",
+      valor: 12000000,
       centralizado: true,
       ac: false
     }
@@ -43,6 +45,7 @@ export class AutoService {
         a.modelo = auto.modelo,
         a.marca = auto.marca,
         a.color = auto.color,
+        a.valor = auto.valor,
         a.centralizado = auto.centralizado,
         a.anno = auto.anno
         a.ac = auto.ac

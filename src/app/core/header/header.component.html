@@ -1,11 +1,11 @@
 <mat-toolbar>
-    <span class="sections">AutoStop</span>
-    <span class="sections" style="margin-left: 5px">|</span>
+    <a class="sections" routerLink="/">AutoStop</a>
+    <span class="sections" style="margin-left: 20px">|</span>
     <div class="left">
-        <span class="sections" routerLink="/">Ventas</span>
-        <span class="sections" routerLink="/autos">Vehículos</span>
-        <span class="sections" routerLink="/">Dueños</span>
+        <a class="sections" routerLink="/ventas">Ventas</a>
+        <a class="sections" routerLink="/autos">Vehículos</a>
+        <a class="sections" routerLink="/vendedores">Dueños</a>
     </div>
     <span class="spacer"></span>
-    <button mat-raised-button class="login-button">Login</button>
+    <button mat-raised-button class="login-button" routerLink="/login">Login</button>
 </mat-toolbar>

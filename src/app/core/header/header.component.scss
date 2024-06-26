@@ -1,6 +1,10 @@
 mat-toolbar {
     background-color: #1B5299;
     color: #2C2C34;
+    top: 0;
+}
+a {
+    text-decoration: none;
 }
 .spacer {
     flex: 1 1 auto;
@@ -10,11 +14,11 @@ mat-toolbar {
     height: 50%;
 }
 .left{
-    margin-left: 10px;
+    margin-left: 20px;
     display: flex;
     gap: 10px;
 }
 .sections {
     font-weight: 500;
-    color: white
+    color: white;
 }

@@ -1,0 +1,25 @@
+.btnBack {
+    padding: 1rem;
+}
+
+.btnBack button {
+    border: 2px solid #1B5299;
+}
+
+.addVehiculo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    border: 1px solid #1B5299;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.addVehiculo h6 {
+    text-align: center;
+}
+
+.addVehiculo button {
+    border: 2px solid #1B5299;
+}

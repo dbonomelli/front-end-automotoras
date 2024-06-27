@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auto } from '../model/auto';
+import { Auto } from '../../model/auto';
 
 @Injectable({
   providedIn: 'root'

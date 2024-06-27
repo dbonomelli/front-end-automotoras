@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Auto } from '../../model/auto';
 import { MatIconModule } from '@angular/material/icon';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [MatTableModule, MatIconModule],
+  imports: [MatTableModule, MatIconModule, CurrencyPipe],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss'
 })

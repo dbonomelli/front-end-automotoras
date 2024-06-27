@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { User } from '../model/user';
+import { User } from '../../model/user';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class AuthService {
     {email: "b@b.cl", password: "1234"}
   ]
 
+  
   constructor() { }
 
 

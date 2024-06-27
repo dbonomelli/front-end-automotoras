@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { Auto } from '../../model/auto';
-import { AutoService } from '../../service/auto.service';
 import { TableComponent } from '../../components/table/table.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { AutoService } from '../../service/autoService/auto.service';
 
 @Component({
   selector: 'app-dashboard',

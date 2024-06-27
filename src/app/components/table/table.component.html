@@ -21,7 +21,7 @@
     </ng-container>
     <ng-container matColumnDef="valor">
         <th mat-header-cell *matHeaderCellDef> Valor </th>
-        <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.valor | currency:'CLP ':'symbol':'3.0-0'}} </td>
     </ng-container>
     <ng-container matColumnDef="centralizado">
         <th mat-header-cell *matHeaderCellDef> Cierre Centralizado </th>

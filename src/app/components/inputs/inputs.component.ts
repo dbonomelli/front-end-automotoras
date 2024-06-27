@@ -1,11 +1,11 @@
-import { Component, model } from '@angular/core';
+import { Component, Input, model } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
-import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { AutoService } from '../../service/auto.service';
 import { Auto } from '../../model/auto';
 import { Router } from '@angular/router';
+import { AutoService } from '../../service/autoService/auto.service';
+
 
 @Component({
   selector: 'app-inputs',
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrl: './inputs.component.scss'
 })
 export class InputsComponent {
-
+  @Input() action?:string;
   constructor(private autoService:AutoService,  private router:Router,){}
   isAdd:boolean = true;
   auto?:Auto;
@@ -28,6 +28,15 @@ export class InputsComponent {
   valor:number = 0;
   centralizado:boolean = true;
   ac:boolean = true;
+
+  formAction(){
+    if(this.action == 'SAVE'){
+      this.save();
+    }else{
+
+      this.edit();
+    }
+  }
 
 
 
@@ -45,6 +54,10 @@ export class InputsComponent {
 
     this.autoService.save(this.auto);
     this.back();
+  }
+
+  edit(){
+
   }
 
   back(){

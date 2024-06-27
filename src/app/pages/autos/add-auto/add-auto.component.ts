@@ -9,5 +9,5 @@ import { InputsComponent } from '../../../components/inputs/inputs.component';
   styleUrl: './add-auto.component.scss'
 })
 export class AddAutoComponent {
-
+  action: string = "SAVE";
 }

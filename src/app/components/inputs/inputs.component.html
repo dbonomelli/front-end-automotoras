@@ -1,7 +1,6 @@
 <div class="btnBack">
     <button mat-raised-button (click)="back()"> Volver </button>
 </div>
-@if(isAdd){
     <div class="addVehiculo">
         <h6>Agregar un nuevo vehículo</h6>
         <mat-form-field>
@@ -29,42 +28,7 @@
             <input type="checkbox" [(ngModel)]="ac">Aire acondicionado
         </section>
         <div style="text-align: right;">
-            <button mat-button (click)="save()"> Agregar vehículo</button>
+            <button mat-button (click)="formAction()"> Agregar vehículo</button>
         </div>
     </div>
-}
-@else{
-    <div>
-        <form action="">
-            <mat-form-field>
-                <mat-label>Id</mat-label>
-                <input matInput value="3" disabled>
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Modelo</mat-label>
-                <input matInput value="3" >
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Marca</mat-label>
-                <input matInput value="3" >
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Año</mat-label>
-                <input matInput value="3" >
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Color</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Valor</mat-label>
-                <input matInput value="3" >
-              </mat-form-field>
-              <section class="example-section">
-                <mat-checkbox (ngModel)="centralizado">Cierre centralizado</mat-checkbox>
-                <mat-checkbox (ngModel)="ac">Aire acondicionado</mat-checkbox>
-              </section>
-        </form>
-    </div>
-}
 

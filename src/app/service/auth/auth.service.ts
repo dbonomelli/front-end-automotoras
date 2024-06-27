@@ -11,10 +11,10 @@ export class AuthService {
     {email: "a", password: "1"},
     {email: "b@b.cl", password: "1234"}
   ]
-
-  private session = new BehaviorSubject<string | null>(null);
-
-  constructor() { }
+  private session = new BehaviorSubject<string | null>(sessionStorage.getItem('username'));
+  loggedIn?: boolean;
+  constructor() { 
+  }
 
 
   register(user:User){
@@ -26,6 +26,7 @@ export class AuthService {
       if(x.email == email && x.password == password){
         sessionStorage.setItem('username', email)
         this.session.next(email);
+        this.loggedIn = true;
       }
     })
   }
@@ -37,6 +38,11 @@ export class AuthService {
   logout(){
     sessionStorage.removeItem('username');
     this.session.next(null);
+    this.loggedIn = false;
+  }
+
+  getLoggedIn(){
+    return this.loggedIn;
   }
 
 }

@@ -19,5 +19,5 @@ export class TableComponent {
     this.dataArray.data = this.dataSource || [];
   }
 
-  displayedColumns: string[] = ['id', 'modelo', 'marca', 'anno', 'color', 'valor', 'centralizado', 'ac'];
+  displayedColumns: string[] = ['modelo', 'marca', 'anno', 'color', 'valor', 'centralizado', 'ac'];
 }

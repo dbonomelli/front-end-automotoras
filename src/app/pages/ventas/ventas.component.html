@@ -1,1 +1,10 @@
-<p>ventas works!</p>
+<div class="row">
+    @for (auto of autos; track $index) 
+    {
+    <div class="col-3">
+            <app-card [auto]=auto></app-card>
+    </div>
+    }
+</div>
+
+

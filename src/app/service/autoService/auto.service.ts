@@ -31,7 +31,7 @@ export class AutoService {
     }
   ];
 
-  public get(){
+  public get():Auto[]{
     return this.autos;
   }
 

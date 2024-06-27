@@ -1,0 +1,20 @@
+<mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{auto.marca}} {{auto.modelo}}</mat-card-title>
+      <mat-card-subtitle>{{auto.anno}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="imagen-container">
+      <img class="imagen" mat-card-image src="https://picsum.photos/400/300">
+    </div>
+    <mat-card-content >
+        ${{auto.valor | number}}
+    </mat-card-content>
+    <mat-card-actions align="end">
+          <div class="example-button-container">
+            <a mat-fab extended routerLink=".">
+              <mat-icon fontIcon="directions_car"></mat-icon>
+              Detalles
+            </a>
+          </div>
+    </mat-card-actions>
+  </mat-card>

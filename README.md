@@ -22,6 +22,11 @@ Start the server
   npm run start or ng serve
 ```
 
+## Some pages need a logged user
 
+| User | Pass     |
+| :-------- | :------- | 
+| `a` | `1` | 
+| `b@b.cl` | `1234` | 
 
 

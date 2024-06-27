@@ -5,11 +5,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { VentasComponent } from './pages/ventas/ventas.component';
 import { DuenosComponent } from './pages/duenos/duenos.component';
 import { authGuard } from './auth.guard';
+import { RegisterComponent } from './pages/register/register.component';
 
 export const routes: Routes = [
     {path: 'ventas', component: VentasComponent},
     {path: 'autos', component: DashboardComponent},
     {path: 'autos/create', component: AddAutoComponent, canActivate: [authGuard]},
     {path: 'vendedores', component: DuenosComponent},
-    {path: 'login', component: LoginComponent}
+    {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent}
 ];

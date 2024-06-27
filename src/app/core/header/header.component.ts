@@ -15,6 +15,7 @@ import { Subscription, tap } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   subscription? : Subscription;
   loginButton: boolean = true;
+  username?: string = '';
 
   constructor(private authService: AuthService, private router:Router){
   }

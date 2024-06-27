@@ -7,8 +7,10 @@
         <a class="sections" routerLink="/vendedores">Dueños</a>
     </div>
     <span class="spacer"></span>
-    <!-- @if(loginButton){ -->
+    @if(loginButton){
         <button mat-raised-button class="login-button" routerLink="/login">Login</button>
-    <!-- } -->
+    }@else{
+        <button mat-raised-button class="login-button" (click)="logout()" >Logout</button>
+    }
     
 </mat-toolbar>

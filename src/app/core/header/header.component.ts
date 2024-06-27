@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../service/auth/auth.service';
-import { Observable, map } from 'rxjs';
+import { Observable, Subscription, map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +12,30 @@ import { Observable, map } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
+  subscription? : Subscription;
+  loginButton: boolean = true;
 
+  constructor(private authService: AuthService){}
+  
+  ngOnInit(): void {
+
+    this.subscription = this.authService.getSession().pipe(
+      tap((email) => {
+        if(email != null){
+          this.loginButton = false;
+        }else{
+          this.loginButton = true;
+        }
+      })
+    ).subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
+
+  logout(){
+    this.authService.logout();
+  }
 }

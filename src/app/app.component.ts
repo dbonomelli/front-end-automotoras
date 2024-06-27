@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
-import { AuthService } from './service/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +10,6 @@ import { AuthService } from './service/auth/auth.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'automotora';
-  
-  constructor(private authService:AuthService){}
-
-  ngOnInit(): void {
-
-  }
 }

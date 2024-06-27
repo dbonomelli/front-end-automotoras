@@ -8,11 +8,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
 
   users:User[] = [
-    {email: "a@a.cl", password: "1234"},
+    {email: "a", password: "1"},
     {email: "b@b.cl", password: "1234"}
   ]
 
-  
+  private session = new BehaviorSubject<string | null>(null);
+
   constructor() { }
 
 
@@ -24,14 +25,18 @@ export class AuthService {
     this.users.find((x) => {
       if(x.email == email && x.password == password){
         sessionStorage.setItem('username', email)
+        this.session.next(email);
       }
     })
   }
 
+  getSession(){
+    return this.session.asObservable();
+  }
+
   logout(){
-    if(sessionStorage.getItem('username')){
-      sessionStorage.removeItem('username');
-    }
+    sessionStorage.removeItem('username');
+    this.session.next(null);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../../model/user';
 import { AuthService } from '../../service/auth/auth.service';
 import { MatCardModule } from '@angular/material/card';
@@ -14,6 +14,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './duenos.component.html',
   styleUrl: './duenos.component.scss'
 })
-export class DuenosComponent {
-  
+export class DuenosComponent implements OnInit{
+  constructor(private authService: AuthService){}
+  displayedColumns: string[] = ['name', 'id'];
+  users:User[];
+
+  ngOnInit(): void {
+    this.users = this.authService.getUsers();
+  }
 }

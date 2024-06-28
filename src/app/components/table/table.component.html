@@ -1,49 +1,39 @@
 <table mat-table [dataSource]="dataArray" style="background-color: aliceblue;">
-    <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> Id </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
-    <ng-container matColumnDef="modelo">
-        <th mat-header-cell *matHeaderCellDef> Modelo </th>
-        <td mat-cell *matCellDef="let element"> {{element.modelo}} </td>
-    </ng-container>
-    <ng-container matColumnDef="marca">
-        <th mat-header-cell *matHeaderCellDef> Marca </th>
-        <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
-    </ng-container>
-    <ng-container matColumnDef="anno">
-        <th mat-header-cell *matHeaderCellDef> Año </th>
-        <td mat-cell *matCellDef="let element"> {{element.anno}} </td>
-    </ng-container>
-    <ng-container matColumnDef="color">
-        <th mat-header-cell *matHeaderCellDef> Color </th>
-        <td mat-cell *matCellDef="let element"> {{element.color}} </td>
-    </ng-container>
-    <ng-container matColumnDef="valor">
-        <th mat-header-cell *matHeaderCellDef> Valor </th>
-        <td mat-cell *matCellDef="let element"> {{element.valor | currency:'CLP ':'symbol':'3.0-0'}} </td>
-    </ng-container>
-    <ng-container matColumnDef="centralizado">
-        <th mat-header-cell *matHeaderCellDef> Cierre Centralizado </th>
-
-        <td mat-cell *matCellDef="let element">
-            @if(element.centralizado){
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="check"></mat-icon>
-            }@else{
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="cancel" fontIcon="cancel"></mat-icon>
+    @for(data of displayedColumns; track data){
+    <ng-container matColumnDef="{{data}}">
+        <th mat-header-cell *matHeaderCellDef> {{data}} </th>
+        <td mat-cell *matCellDef="let element"> 
+            @switch(data){
+                @case("id") {
+                    <button mat-fab extended (click)="goToProfile(element[data])">
+                        <mat-icon>favorite</mat-icon>
+                        Mostrar perfil
+                      </button>
+                }
+                @case("centralizado"){
+                    @if(element[data]){
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="check"></mat-icon>
+                    }@else{
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" class="cancel" fontIcon="cancel"></mat-icon>
+                    }
+                }
+                @case("ac"){
+                    @if(element[data]){
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="check"></mat-icon>
+                    }@else{
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" class="cancel" fontIcon="cancel"></mat-icon>
+                    }
+                }
+                @case("valor"){
+                    <span>{{element[data] | currency:'CLP ':'symbol':'3.0-0'}}</span>
+                }
+                @default {
+                    {{element[data]}} 
+                }
             }
         </td>
     </ng-container>
-    <ng-container matColumnDef="ac">
-        <th mat-header-cell *matHeaderCellDef> Aire Acondicionado </th>
-        <td mat-cell *matCellDef="let element">
-            @if(element.ac){
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="check"></mat-icon>
-            }@else{
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="cancel" fontIcon="cancel"></mat-icon>
-            }
-        </td>
-    </ng-container>
+    }
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

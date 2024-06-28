@@ -1,23 +1,27 @@
 import { Component, Input } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { Auto } from '../../model/auto';
 import { MatIconModule } from '@angular/material/icon';
 import { CurrencyPipe } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [MatTableModule, MatIconModule, CurrencyPipe],
+  imports: [MatTableModule, MatIconModule, CurrencyPipe, MatIconModule, MatButtonModule],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss'
 })
 export class TableComponent {
-  @Input() dataSource?:Auto[];
-  dataArray: MatTableDataSource<Auto> = new MatTableDataSource<Auto>([]);
+  @Input() source?:any[];
+  @Input() displayedColumns?:string[];
+  dataArray: MatTableDataSource<any> = new MatTableDataSource<any>([]);
   
   ngOnChanges(): void {
-    this.dataArray.data = this.dataSource || [];
+    this.dataArray.data = this.source || [];
   }
 
-  displayedColumns: string[] = ['modelo', 'marca', 'anno', 'color', 'valor', 'centralizado', 'ac'];
+  goToProfile(id: any){
+    console.log(id);
+  }
+
 }

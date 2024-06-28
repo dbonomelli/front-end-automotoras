@@ -6,7 +6,7 @@
                 <button mat-raised-button
                 [routerLink]="['/autos/create']">Agregar vehículo</button>
             </div>
-            <app-table [dataSource]="auto"></app-table>
+            <app-table [source]="auto" [displayedColumns]="displayedColumns"></app-table>
         </mat-card>
     </div>
     <div class="col-md-6">

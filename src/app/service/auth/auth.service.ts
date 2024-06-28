@@ -8,8 +8,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
 
   users:User[] = [
-    {email: "a", name: "Alien", region: "Metropolitana", contacto: "+56911111111", password: "1"},
-    {email: "b@b.cl", name: "Barco", region: "Valparaíso", contacto: "+56922222222", password: "1234"}
+    {email: "a", name: "Alien", region: "Metropolitana", contacto: "+56911111111", password: "1", id: "asd"},
+    {email: "b@b.cl", name: "Barco", region: "Valparaíso", contacto: "+56922222222", password: "1234", id: "dsa"}
   ]
   private session = new BehaviorSubject<string | null>(sessionStorage.getItem('username'));
   loggedIn?: boolean;
@@ -42,6 +42,11 @@ export class AuthService {
 
   getLoggedIn(){
     return this.loggedIn;
+  }
+
+  getUsers(){
+    let users:any = this.users.map(x => {return {name: x.name, id: x.id}});
+    return users;
   }
 
 }

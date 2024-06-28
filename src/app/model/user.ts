@@ -4,4 +4,5 @@ export class User {
     region?:string;
     contacto?:string;
     password?:string;
+    id?:string;
 }

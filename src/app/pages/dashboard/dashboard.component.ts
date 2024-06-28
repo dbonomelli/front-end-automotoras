@@ -16,7 +16,7 @@ import { AutoService } from '../../service/autoService/auto.service';
 })
 
 export class DashboardComponent {
-
+  displayedColumns: string[] = ['modelo', 'marca', 'anno', 'color', 'valor', 'centralizado', 'ac'];
   auto?:Auto[];
 
   constructor(private autoService:AutoService){}

@@ -1,18 +1,13 @@
 <div class="row">
     <div class="col-md-12">
-        <mat-card style="background-color: #1B5299;">
+        <mat-card>
             <div class="table-header">
-                <mat-card-header style="color: white">Vehículos disponibles para vender</mat-card-header>
+                <mat-card-header>Vehículos disponibles para vender</mat-card-header>
                 <button mat-raised-button
                 [routerLink]="['/autos/create']">Agregar vehículo</button>
             </div>
             <app-table [source]="auto" [displayedColumns]="displayedColumns"></app-table>
         </mat-card>
-    </div>
-    <div class="col-md-6">
-        <div style="height: 100%; background-color: #1B5299;">
-
-        </div>
     </div>
 </div>
 

@@ -1,14 +1,13 @@
-mat-grid-tile {
-    background: lightblue;
-  }
+
 .table-header{
   display: flex; 
-  margin-top: 20px; 
-  justify-content: space-between; 
+  justify-content: center; 
   padding-right: 1rem; 
   padding-bottom: 1rem; 
   padding-left: 1rem; 
-  align-items: baseline;
+  align-items: center;
+  text-align: center;
+  background-color: #1B5299;
 }
 
 mat-card {
@@ -16,6 +15,7 @@ mat-card {
   border: 1px solid #1B5299;
 }
 
-mat-card-header{
-  padding: 0;
+mat-card-header {
+  color: white;
+  font-weight: bold;
 }

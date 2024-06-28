@@ -16,6 +16,8 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   user?:User;
   email:string = '';
+  region:string = '';
+  contacto:string = '';
   password:string = '';
   password2:string='';
   name:string= '';
@@ -30,6 +32,8 @@ export class RegisterComponent {
       this.user = {
         name: this.name,
         email: this.email,
+        region: this.region,
+        contacto: this.contacto,
         password: this.password
       }
       this.authService.register(this.user)

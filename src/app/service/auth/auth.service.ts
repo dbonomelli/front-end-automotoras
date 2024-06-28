@@ -8,14 +8,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
 
   users:User[] = [
-    {email: "a", name: "Alien", password: "1"},
-    {email: "b@b.cl", name: "Barco", password: "1234"}
+    {email: "a", name: "Alien", region: "Metropolitana", contacto: "+56911111111", password: "1"},
+    {email: "b@b.cl", name: "Barco", region: "Valparaíso", contacto: "+56922222222", password: "1234"}
   ]
   private session = new BehaviorSubject<string | null>(sessionStorage.getItem('username'));
   loggedIn?: boolean;
   constructor() { 
   }
-
 
   register(user:User){
     this.users.push(user)

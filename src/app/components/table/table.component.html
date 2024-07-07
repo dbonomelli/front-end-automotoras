@@ -10,6 +10,9 @@
                         Mostrar perfil
                       </button>
                 }
+                @case("actions") {
+                    <a mat-button [routerLink]="['/autos/edit', element[data]]"> Ver vehículo</a>
+                }
                 @case("centralizado"){
                     @if(element[data]){
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="check"></mat-icon>

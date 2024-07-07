@@ -1,5 +1,5 @@
 export class Auto {
-    id?:string;
+    idAuto?:string;
     modelo?:string;
     marca?:string;
     anno?:number;
@@ -7,4 +7,5 @@ export class Auto {
     valor?:number;
     centralizado?:boolean;
     ac?:boolean;
+    actions?:string;
 }

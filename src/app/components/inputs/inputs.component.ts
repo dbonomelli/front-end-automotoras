@@ -1,4 +1,4 @@
-import { Component, Input, model } from '@angular/core';
+import { Component, Input, OnInit, model } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
@@ -14,13 +14,26 @@ import { AutoService } from '../../service/autoService/auto.service';
   templateUrl: './inputs.component.html',
   styleUrl: './inputs.component.scss'
 })
-export class InputsComponent {
+export class InputsComponent implements OnInit{
   @Input() action?:string;
+  @Input() editAuto:any;
   constructor(private autoService:AutoService,  private router:Router,){}
   isAdd:boolean = true;
-  auto?:Auto;
+  ngOnInit(): void {
+    if(this.editAuto != null){
+      this.id = this.editAuto.idAuto;
+      this.modelo = this.editAuto.modelo;
+      this.marca = this.editAuto.marca;
+      this.anno = this.editAuto.anno;
+      this.color = this.editAuto.color;
+      this.centralizado = this.editAuto.centralizado;
+      this.ac = this.editAuto.ac;
+      this.isAdd = false;
+    }
+  }
 
-  id?:string = '';
+  auto?:Auto;
+  id:string = '';
   modelo:string = '';
   marca:string = '';
   anno:number = 0;
@@ -33,7 +46,6 @@ export class InputsComponent {
     if(this.action == 'SAVE'){
       this.save();
     }else{
-
       this.edit();
     }
   }
@@ -41,8 +53,26 @@ export class InputsComponent {
 
 
   save(){
+    const id = this.generadorID(8);
     this.auto = {
-      id: this.generadorID(8),
+      idAuto: id,
+      modelo: this.modelo,
+      marca: this.marca,
+      anno: this.anno,
+      color: this.color,
+      valor: this.valor,
+      centralizado: this.centralizado,
+      ac: this.ac,
+      actions: id
+    }
+
+    this.autoService.save(this.auto);
+    this.back();
+  }
+
+  edit(){
+    this.auto = {
+      idAuto: this.id,
       modelo: this.modelo,
       marca: this.marca,
       anno: this.anno,
@@ -51,13 +81,8 @@ export class InputsComponent {
       centralizado: this.centralizado,
       ac: this.ac
     }
-
-    this.autoService.save(this.auto);
+    this.autoService.edit(this.id, this.auto);
     this.back();
-  }
-
-  edit(){
-
   }
 
   back(){

@@ -10,24 +10,26 @@ export class AutoService {
 
   autos:Auto[] = [
     {
-      id: "as5l47SN",
+      idAuto: "as5l47SN",
       modelo: "3",
       marca: "Mazda",
       anno: 2004,
       color: "Azul",
       valor: 10000000,
       centralizado: true,
-      ac: true
+      ac: true,
+      actions: "as5l47SN"
     },
     {
-      id: "a2fl4ASn",
+      idAuto: "a2fl4ASn",
       modelo: "Spark",
       marca: "Chevrolet",
       anno: 2018,
       color: "Rojo",
       valor: 12000000,
       centralizado: true,
-      ac: false
+      ac: false,
+      actions: "a2fl4ASn"
     }
   ];
 
@@ -40,8 +42,8 @@ export class AutoService {
   }
 
   public edit(id: string, auto: Auto){
-    this.autos.filter((a) => {
-      if(a.id === id){
+    this.autos.find((a) => {
+      if(a.idAuto === id){
         a.modelo = auto.modelo,
         a.marca = auto.marca,
         a.color = auto.color,
@@ -53,9 +55,13 @@ export class AutoService {
     })
   }
 
+  public getAuto(id: string){
+    return this.autos.find(auto=>auto.idAuto === id);
+  }
+
   public delete(id: string){
     this.autos.filter((a)=>{
-      if(a.id === id){
+      if(a.idAuto === id){
         this.autos.pop();
       }
     })

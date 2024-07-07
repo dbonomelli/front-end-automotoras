@@ -28,7 +28,13 @@
             <input type="checkbox" [(ngModel)]="ac">Aire acondicionado
         </section>
         <div style="text-align: right;">
-            <button mat-button (click)="formAction()"> Agregar vehículo</button>
+            <button mat-button (click)="formAction()">
+                @if(isAdd){
+                    Agregar vehículo
+                }@else{
+                    Editar Vehículo
+                }
+            </button>
         </div>
     </div>
 

@@ -89,6 +89,11 @@ export class InputsComponent implements OnInit{
     this.router.navigate(['autos']);
   }
 
+  deleteAuto(){
+    this.autoService.delete(this.id);
+    this.back();
+  }
+
   generadorID(length: number) {
     let alfab = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';

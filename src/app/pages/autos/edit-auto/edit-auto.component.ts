@@ -19,7 +19,6 @@ export class EditAutoComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.auto = this.autoService.getAuto(params['id']);
-      console.log(this.auto)
     })
   }
   

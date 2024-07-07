@@ -60,11 +60,10 @@ export class AutoService {
   }
 
   public delete(id: string){
-    this.autos.filter((a)=>{
-      if(a.idAuto === id){
-        this.autos.pop();
-      }
-    })
+    const index = this.autos.findIndex(i => i.idAuto === id)
+    if(index !== -1){
+      this.autos.splice(index, 1);
+    }
   }
 
 }

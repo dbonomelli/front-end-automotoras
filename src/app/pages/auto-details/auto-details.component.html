@@ -1,0 +1,29 @@
+<div class="btnBack">
+    <button mat-raised-button (click)="back()"> Volver </button>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="imagen-container">
+            <img class="imagen" mat-card-image src="https://picsum.photos/400/300">
+          </div>
+    </div>
+    <div class="col-9">
+        <div class="row">{{auto.modelo}}</div>
+        <div class="row">{{auto.marca}}</div>
+        <div class="row">{{auto.anno}}</div>
+        <div class="row">{{auto.color}}</div>
+        <div class="row">{{auto.valor}}</div>
+        <div class="row">
+            @if(auto.centralizado){
+                <p>Es centralizado</p>
+            }@else{
+                <p>No es centralizado</p>
+            }</div>
+        <div class="row">
+            @if(auto.ac){
+                <p>Tiene aire acondicionado</p>
+            }@else{
+                <p>No tiene aire acondicionado</p>
+            }</div>
+    </div>
+</div>

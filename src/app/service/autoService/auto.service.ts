@@ -56,7 +56,11 @@ export class AutoService {
   }
 
   public getAuto(id: string){
-    return this.autos.find(auto=>auto.idAuto === id);
+    return this.autos.find(auto => auto.idAuto === id);
+  }
+
+  public getAutoById(id: any){
+    return this.autos.find(auto => auto.idAuto === id);
   }
 
   public delete(id: string){

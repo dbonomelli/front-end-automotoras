@@ -3,7 +3,8 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { CurrencyPipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { DuenosPerfilComponent } from '../../pages/duenos-perfil/duenos-perfil.component';
 
 @Component({
   selector: 'app-table',
@@ -21,7 +22,10 @@ export class TableComponent {
     this.dataArray.data = this.source || [];
   }
 
+  constructor(private router: Router) { }
+
   goToProfile(id: any){
+    this.router.navigate(['/vendedores', id]);
     console.log(id);
   }
 

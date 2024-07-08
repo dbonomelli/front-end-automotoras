@@ -20,5 +20,5 @@ export class CardComponent {
   constructor(private autoService:AutoService){
 
   }
-
+  
 }

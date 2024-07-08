@@ -7,13 +7,17 @@ import { DuenosComponent } from './pages/duenos/duenos.component';
 import { authGuard } from './auth.guard';
 import { RegisterComponent } from './pages/register/register.component';
 import { EditAutoComponent } from './pages/autos/edit-auto/edit-auto.component';
+import { DuenosPerfilComponent } from './pages/duenos-perfil/duenos-perfil.component';
+import { AutoDetailsComponent } from './pages/auto-details/auto-details.component';
 
 export const routes: Routes = [
     {path: 'ventas', component: VentasComponent},
+    {path: 'ventas/:id', component: AutoDetailsComponent},
     {path: 'autos', component: DashboardComponent},
-    {path: 'autos/create', component: AddAutoComponent},
+    {path: 'autos/create', component: AddAutoComponent, canActivate: [authGuard]},
     {path: 'autos/edit/:id', component: EditAutoComponent},
     {path: 'vendedores', component: DuenosComponent},
+    {path:'vendedores/:id', component: DuenosPerfilComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent}
 ];

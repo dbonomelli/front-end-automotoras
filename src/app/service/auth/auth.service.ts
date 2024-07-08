@@ -14,6 +14,10 @@ export class AuthService {
   private session = new BehaviorSubject<string | null>(sessionStorage.getItem('username'));
   loggedIn?: boolean;
   constructor() { 
+    if(this.session != null){
+      this.loggedIn = true;
+    }
+
   }
 
   register(user:User){
@@ -47,6 +51,10 @@ export class AuthService {
   getUsers(){
     let users:any = this.users.map(x => {return {name: x.name, id: x.id}});
     return users;
+  }
+
+  getUserById(id: string) {
+    return this.users.find(user => user.id === id);
   }
 
 }

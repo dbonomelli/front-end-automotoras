@@ -1,29 +1,39 @@
 <div class="btnBack">
     <button mat-raised-button (click)="back()"> Volver </button>
 </div>
-<div class="row">
-    <div class="col-3">
+<div class="row" id="info">
+    <div class="col-3" id="infoimg">
         <div class="imagen-container">
             <img class="imagen" mat-card-image src="https://picsum.photos/400/300">
           </div>
     </div>
-    <div class="col-9">
-        <div class="row">{{auto.modelo}}</div>
-        <div class="row">{{auto.marca}}</div>
-        <div class="row">{{auto.anno}}</div>
-        <div class="row">{{auto.color}}</div>
-        <div class="row">{{auto.valor}}</div>
+    <div class="col-9" id="infodato">
+        <div class="row" id="title">
+            <div class="col-3"><h4>{{auto.marca}}</h4></div>
+            <div class="col-6"><h4>{{auto.modelo}}</h4></div>
+        </div>
+        <div class="row"><div class="col">Año: {{auto.anno}}</div></div>
+        <div class="row"><div class="col">Color: {{auto.color}}</div></div>
+        <div class="row"><div class="col">Precio: ${{auto.valor | number}}</div></div>
         <div class="row">
+            <div class="col">
             @if(auto.centralizado){
-                <p>Es centralizado</p>
+                Es centralizado
             }@else{
-                <p>No es centralizado</p>
+                No es centralizado
             }</div>
+        </div>
         <div class="row">
+            <div class="col">
             @if(auto.ac){
-                <p>Tiene aire acondicionado</p>
+                Tiene aire acondicionado
             }@else{
-                <p>No tiene aire acondicionado</p>
+                No tiene aire acondicionado
             }</div>
+        </div>
+        <div class="row">
+            <div class="col" id="infodueno"><a [routerLink]="['/vendedores',auto.dueno]"><mat-icon>person</mat-icon>{{dueno.name}}</a></div>
+            <div class="col" id="infophone"><mat-icon>phone</mat-icon>{{dueno.contacto}}</div>
+        </div>
     </div>
 </div>

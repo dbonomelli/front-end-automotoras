@@ -1,17 +1,17 @@
 <div class="btnBack">
     <button mat-raised-button (click)="back()"> Volver </button>
 </div>
-<div class="row">
-    <div class="col-3">
+<div class="row" id="info">
+    <div class="col-3" id="infoimg">
         <div class="imagen-container">
             <img class="imagen" mat-card-image src="https://picsum.photos/400/300">
           </div>
     </div>
-    <div class="col-9">
-        <div class="row">{{user.name}}</div>
-        <div class="row">{{user.region}}</div>
-        <div class="row">{{user.email}}</div>
-        <div class="row">{{user.contacto}}</div>
+    <div class="col-9" id="infodato">
+        <div class="row">Nombre: {{user.name}}</div>
+        <div class="row">Región: {{user.region}}</div>
+        <div class="row">Correo: {{user.email}}</div>
+        <div class="row">Contacto: {{user.contacto}}</div>
     </div>
 </div>
 

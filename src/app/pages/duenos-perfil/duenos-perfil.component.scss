@@ -1,0 +1,45 @@
+.btnBack button{
+    border: 1px solid #1B5299;
+    margin-bottom: 1rem;
+}
+
+.row{
+    margin: 1rem;
+}
+
+#info {
+    border: 1px solid #1B5299;
+}
+
+#infoimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1B5299;
+}
+
+.imagen-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imagen {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  #infodato{
+    background-color: #DCE9F9;
+ }
+
+.row div {
+    font-size: medium;
+    color: #000000;
+  }

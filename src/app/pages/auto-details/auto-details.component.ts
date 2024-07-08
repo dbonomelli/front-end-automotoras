@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '../../service/auth/auth.service';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-auto-details',
   standalone: true,
-  imports: [CommonModule, MatCardModule, RouterLink, MatButtonModule],
+  imports: [CommonModule, MatCardModule, RouterLink, MatButtonModule, MatIcon],
   templateUrl: './auto-details.component.html',
   styleUrl: './auto-details.component.scss'
 })

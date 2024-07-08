@@ -9,8 +9,10 @@ import { RegisterComponent } from './pages/register/register.component';
 import { EditAutoComponent } from './pages/autos/edit-auto/edit-auto.component';
 import { DuenosPerfilComponent } from './pages/duenos-perfil/duenos-perfil.component';
 import { AutoDetailsComponent } from './pages/auto-details/auto-details.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
+    {path: '', component: HomeComponent},
     {path: 'ventas', component: VentasComponent},
     {path: 'ventas/:id', component: AutoDetailsComponent},
     {path: 'autos', component: DashboardComponent},

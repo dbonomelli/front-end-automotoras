@@ -8,4 +8,5 @@ export class Auto {
     centralizado?:boolean;
     ac?:boolean;
     actions?:string;
+    dueno?:string;
 }

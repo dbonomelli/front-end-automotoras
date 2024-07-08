@@ -14,7 +14,7 @@ export class AuthService {
   private session = new BehaviorSubject<string | null>(sessionStorage.getItem('username'));
   loggedIn?: boolean;
   constructor() { 
-    if(this.session != null){
+    if(this.session.value != null){
       this.loggedIn = true;
     }
 

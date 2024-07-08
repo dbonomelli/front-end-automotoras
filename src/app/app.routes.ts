@@ -15,7 +15,7 @@ export const routes: Routes = [
     {path: 'ventas/:id', component: AutoDetailsComponent},
     {path: 'autos', component: DashboardComponent},
     {path: 'autos/create', component: AddAutoComponent, canActivate: [authGuard]},
-    {path: 'autos/edit/:id', component: EditAutoComponent},
+    {path: 'autos/edit/:id', component: EditAutoComponent, canActivate: [authGuard]},
     {path: 'vendedores', component: DuenosComponent},
     {path:'vendedores/:id', component: DuenosPerfilComponent},
     {path: 'login', component: LoginComponent},

@@ -18,7 +18,8 @@ export class AutoService {
       valor: 10000000,
       centralizado: true,
       ac: true,
-      actions: "as5l47SN"
+      actions: "as5l47SN",
+      dueno: "asd"
     },
     {
       idAuto: "a2fl4ASn",
@@ -29,7 +30,8 @@ export class AutoService {
       valor: 12000000,
       centralizado: true,
       ac: false,
-      actions: "a2fl4ASn"
+      actions: "a2fl4ASn",
+      dueno: "dsa"
     }
   ];
 

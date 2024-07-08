@@ -41,6 +41,7 @@ export class InputsComponent implements OnInit{
   valor:number = 0;
   centralizado:boolean = true;
   ac:boolean = true;
+  dueno:any = sessionStorage.getItem('username')
 
   formAction(){
     if(this.action == 'SAVE'){
@@ -63,7 +64,8 @@ export class InputsComponent implements OnInit{
       valor: this.valor,
       centralizado: this.centralizado,
       ac: this.ac,
-      actions: id
+      actions: id,
+      dueno: this.dueno
     }
 
     this.autoService.save(this.auto);

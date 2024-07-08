@@ -30,6 +30,7 @@ export class RegisterComponent {
       alert("Contraseñas no coinciden, por favor vuelve a intentarlo")
     }else{
       this.user = {
+        id: this.generadorID(8),
         name: this.name,
         email: this.email,
         region: this.region,
@@ -40,6 +41,15 @@ export class RegisterComponent {
       this.router.navigate(['login'])
     }
   }
+
+  generadorID(length: number) {
+    let alfab = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += alfab.charAt(Math.floor(Math.random() * alfab.length));
+    }
+    return result;
+}
 
 
 }

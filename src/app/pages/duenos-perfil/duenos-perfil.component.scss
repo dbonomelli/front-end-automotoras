@@ -9,6 +9,10 @@
 
 #info {
     border: 1px solid #1B5299;
+    background-color: #DCE9F9;
+    border-radius: 15px;
+    height: 50vh;
+    display: flex;
 }
 
 #infoimg {
@@ -16,6 +20,8 @@
     justify-content: center;
     align-items: center;
     border: 1px solid #1B5299;
+    background-color: #FFFFFF;
+    border-radius: 15px;
 }
 
 .imagen-container {
@@ -36,7 +42,10 @@
   }
 
   #infodato{
-    background-color: #DCE9F9;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
  }
 
 .row div {

@@ -8,11 +8,13 @@
   padding-left: 1rem; 
   align-items: center;
   background-color: #1B5299;
+  border-radius: 15px 15px 0 0;
 }
 
 mat-card {
   margin: 10px;
   border: 1px solid #1B5299;
+  background-color: #1B5299;
 }
 
 mat-card-header {

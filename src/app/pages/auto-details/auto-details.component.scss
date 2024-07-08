@@ -9,6 +9,8 @@
 
 #info {
     border: 1px solid #1B5299;
+    border-radius: 15px;
+    background-color: #DCE9F9;
 }
 
 a {
@@ -18,7 +20,7 @@ a {
   }
 
 a:hover {
-    color: #1B5299; 
+    color: #FFFFFF; 
   }
 
 #infoimg {
@@ -26,6 +28,8 @@ a:hover {
     justify-content: center;
     align-items: center;
     border: 1px solid #1B5299;
+    border-radius: 15px;
+    background-color: #FFFFFF;
 }
 
 .imagen-container {
@@ -46,7 +50,7 @@ a:hover {
   }
 
  #infodato{
-    background-color: #DCE9F9;
+    border-radius: 15px;
  }
 
 .row div {

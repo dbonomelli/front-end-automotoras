@@ -20,6 +20,7 @@ export class InputsComponent implements OnInit{
   constructor(private autoService:AutoService,  private router:Router,){}
   isAdd:boolean = true;
   ngOnInit(): void {
+    
     if(this.editAuto != null){
       this.id = this.editAuto.idAuto;
       this.modelo = this.editAuto.modelo;
@@ -55,6 +56,7 @@ export class InputsComponent implements OnInit{
 
   save(){
     const id = this.generadorID(8);
+    const imagenG = this.autoService.asignarImagen();
     this.auto = {
       idAuto: id,
       modelo: this.modelo,
@@ -65,7 +67,8 @@ export class InputsComponent implements OnInit{
       centralizado: this.centralizado,
       ac: this.ac,
       actions: id,
-      dueno: this.dueno
+      dueno: this.dueno,
+      imagen: imagenG
     }
 
     this.autoService.save(this.auto);

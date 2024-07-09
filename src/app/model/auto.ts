@@ -9,4 +9,5 @@ export class Auto {
     ac?:boolean;
     actions?:string;
     dueno?:string;
+    imagen?:string;
 }

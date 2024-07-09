@@ -22,6 +22,7 @@ export class LoginComponent {
 
   login(){
     this.authService.login(this.email, this.password);
+    this.router.navigate(['autos']);
   }
 
   goToRegister(){

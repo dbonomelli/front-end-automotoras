@@ -1,8 +1,26 @@
 mat-toolbar {
-    background-color: #B18FCF;
+    background-color: #1B5299;
     color: #2C2C34;
     bottom: 0;
     left: 0;
     width: 100%;
     margin-top: auto;
+}
+
+span{
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+span.main{
+    color: white;
+    font-size: 25px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

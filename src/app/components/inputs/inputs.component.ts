@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Auto } from '../../model/auto';
 import { Router } from '@angular/router';
 import { AutoService } from '../../service/autoService/auto.service';
+import { AuthService } from '../../service/auth/auth.service';
 
 
 @Component({
@@ -17,16 +18,20 @@ import { AutoService } from '../../service/autoService/auto.service';
 export class InputsComponent implements OnInit{
   @Input() action?:string;
   @Input() editAuto:any;
-  constructor(private autoService:AutoService,  private router:Router,){}
+  constructor(private autoService:AutoService,  private router:Router, private authService:AuthService){}
   isAdd:boolean = true;
+  idDueno:any;
+  dueno:any;
   ngOnInit(): void {
-    
+    this.dueno = sessionStorage.getItem('username');
+    this.idDueno = this.authService.getUserByEmail(this.dueno)
     if(this.editAuto != null){
       this.id = this.editAuto.idAuto;
       this.modelo = this.editAuto.modelo;
       this.marca = this.editAuto.marca;
       this.anno = this.editAuto.anno;
       this.color = this.editAuto.color;
+      this.valor = this.editAuto.valor;
       this.centralizado = this.editAuto.centralizado;
       this.ac = this.editAuto.ac;
       this.isAdd = false;
@@ -42,7 +47,7 @@ export class InputsComponent implements OnInit{
   valor:number = 0;
   centralizado:boolean = true;
   ac:boolean = true;
-  dueno:any = sessionStorage.getItem('username')
+
 
   formAction(){
     if(this.action == 'SAVE'){
@@ -67,7 +72,7 @@ export class InputsComponent implements OnInit{
       centralizado: this.centralizado,
       ac: this.ac,
       actions: id,
-      dueno: this.dueno,
+      dueno: this.idDueno.id,
       imagen: imagenG
     }
 
